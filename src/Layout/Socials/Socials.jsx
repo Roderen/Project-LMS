@@ -9,6 +9,7 @@ import {
 const socialContainerStyle = {
   padding: '20px 50px 20px 20px',
   backgroundColor: '#fff',
+  marginBottom: '50px',
 };
 
 const paragraphStyle = {
