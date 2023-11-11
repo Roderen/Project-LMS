@@ -4,12 +4,18 @@ import './Reset.css';
 import { Layout } from 'antd';
 import Header from './Layout/Header';
 import Sidebar from './Layout/Sidebar/Sidebar';
+import Socials from './Layout/Socials/Socials';
 
 function App() {
   return (
-    <Layout style={{ height: '100%' }}>
+    <Layout direction="vertical" style={{ height: '100%' }}>
       <Sidebar />
-      <Header />
+      <Layout style={{ display: 'block' }}>
+        <Header />
+        <Layout.Content className="contentStyle">
+          <Socials />
+        </Layout.Content>
+      </Layout>
     </Layout>
   );
 }

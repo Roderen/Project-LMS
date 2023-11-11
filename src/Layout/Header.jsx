@@ -21,15 +21,13 @@ function Header() {
   const dispatch = useDispatch();
 
   return (
-    <Layout>
-      <Layout.Header style={headerStyle}>
-        <Flex align="middle" style={{ width: '100%', gap: '50px' }}>
-          <MenuOutlined style={burgerButtonStyle} onClick={() => dispatch({ type: 'collapsed', payload: !collapse })} />
-          <Typography.Paragraph style={nameStyle}>Maksym V</Typography.Paragraph>
-          <FullscreenOutlined style={{ fontSize: '20px' }} />
-        </Flex>
-      </Layout.Header>
-    </Layout>
+    <Layout.Header style={headerStyle}>
+      <Flex align="middle" style={{ width: '100%', gap: '50px' }}>
+        <MenuOutlined style={burgerButtonStyle} onClick={() => dispatch({ type: 'collapsed', payload: !collapse })} />
+        <Typography.Paragraph style={nameStyle}>Maksym V</Typography.Paragraph>
+        <FullscreenOutlined style={{ fontSize: '20px' }} />
+      </Flex>
+    </Layout.Header>
   );
 }
 
