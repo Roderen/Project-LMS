@@ -5,6 +5,7 @@ import { Layout } from 'antd';
 import Header from './Layout/Header';
 import Sidebar from './Layout/Sidebar/Sidebar';
 import Socials from './Layout/Socials/Socials';
+import Dashboard from './Layout/Dashboard/Dashboard';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Header />
         <Layout.Content className="contentStyle">
           <Socials />
+          <Dashboard />
         </Layout.Content>
       </Layout>
     </Layout>
