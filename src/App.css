@@ -1,3 +1,7 @@
 body {
   background-color: #f2edf3;
 }
+
+.contentStyle {
+  padding: 50px 40px;
+}
