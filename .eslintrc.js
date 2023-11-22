@@ -24,6 +24,7 @@ module.exports = {
   rules: {
     indent: 'off',
     'react/jsx-indent': [2, 2],
+    'react/prop-types': 'off',
     'template-curly-spacing': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'import/prefer-default-export': 'off',

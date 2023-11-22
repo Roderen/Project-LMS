@@ -7,12 +7,15 @@ function DashboardContainer(props) {
     title, widthContainer, children,
   } = props;
 
+  const dashboardContainerStyle = {
+    maxWidth: widthContainer,
+    flex: `1 1 ${widthContainer}`,
+  };
+
   return (
-    <div className="dashboard__container" style={{ width: widthContainer }}>
-      <div className="dashboard__inner">
-        <div className="dashboard__container-title">{title}</div>
-        {children}
-      </div>
+    <div className="dashboard__container" style={dashboardContainerStyle}>
+      <div className="dashboard__container-title">{title}</div>
+      {children}
     </div>
   );
 }

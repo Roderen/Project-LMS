@@ -55,7 +55,9 @@ function HorizontalChart() {
 
   return (
     <div>
-      {isLoading ? <div>Loading...</div> : <Bar options={options} data={chartData()} height="400px" />}
+      {isLoading ? <div>Loading...</div> : (
+        <Bar options={options} data={chartData()} height={400} />
+      )}
     </div>
   );
 }
