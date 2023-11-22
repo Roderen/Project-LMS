@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import './App.css';
 import './Reset.css';
 import { Flex, Layout } from 'antd';
@@ -38,8 +39,6 @@ function App() {
     'https://www.youtube.com/embed/7wtfhZwyrcc?si=DeMTOzdAJKwuHeTM',
     'https://www.youtube.com/embed/7wtfhZwyrcc?si=DeMTOzdAJKwuHeTM',
     'https://www.youtube.com/embed/7wtfhZwyrcc?si=DeMTOzdAJKwuHeTM',
-    'https://www.youtube.com/embed/7wtfhZwyrcc?si=DeMTOzdAJKwuHeTM',
-    'https://www.youtube.com/embed/7wtfhZwyrcc?si=DeMTOzdAJKwuHeTM',
   ];
 
   return (
@@ -75,12 +74,10 @@ function App() {
             <Swiper
               spaceBetween={20}
               slidesPerView={3}
-              onSlideChange={() => console.log('slide change')}
-              onSwiper={(swiper) => console.log(swiper)}
             >
               <Flex>
                 {videosForSlider.map((item) => (
-                  <SwiperSlide>
+                  <SwiperSlide key={uuidv4()}>
                     <iframe
                       width="100%"
                       height="250"
