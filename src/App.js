@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import './Reset.css';
-import { Layout } from 'antd';
+import { Flex, Layout } from 'antd';
 import Icon from '@mdi/react';
-import { mdiLanguageJavascript, mdiReact } from '@mdi/js';
+import { mdiLanguageJavascript, mdiReact, mdiVideo } from '@mdi/js';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.min.css';
 import Header from './Layout/Header';
 import Sidebar from './Layout/Sidebar/Sidebar';
 import Socials from './Layout/Socials/Socials';
@@ -32,6 +34,14 @@ function App() {
     }
   }, [data]);
 
+  const videosForSlider = [
+    'https://www.youtube.com/embed/7wtfhZwyrcc?si=DeMTOzdAJKwuHeTM',
+    'https://www.youtube.com/embed/7wtfhZwyrcc?si=DeMTOzdAJKwuHeTM',
+    'https://www.youtube.com/embed/7wtfhZwyrcc?si=DeMTOzdAJKwuHeTM',
+    'https://www.youtube.com/embed/7wtfhZwyrcc?si=DeMTOzdAJKwuHeTM',
+    'https://www.youtube.com/embed/7wtfhZwyrcc?si=DeMTOzdAJKwuHeTM',
+  ];
+
   return (
     <Layout direction="vertical" style={{ height: '100%' }}>
       <Sidebar />
@@ -55,6 +65,36 @@ function App() {
               </div>
             </PageHeader>
             {isLoading ? <div>Loading...</div> : (<CourseBoard data={dataSource} />)}
+          </DashboardContainer>
+          <DashboardContainer title="" widthContainer="100%">
+            <PageHeader title="Полезные видео">
+              <div className="page__header-icon">
+                <Icon path={mdiVideo} size={1.3} />
+              </div>
+            </PageHeader>
+            <Swiper
+              spaceBetween={20}
+              slidesPerView={3}
+              onSlideChange={() => console.log('slide change')}
+              onSwiper={(swiper) => console.log(swiper)}
+            >
+              <Flex>
+                {videosForSlider.map((item) => (
+                  <SwiperSlide>
+                    <iframe
+                      width="100%"
+                      height="250"
+                      src={item}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </SwiperSlide>
+                ))}
+                ;
+              </Flex>
+            </Swiper>
           </DashboardContainer>
         </Layout.Content>
       </Layout>
